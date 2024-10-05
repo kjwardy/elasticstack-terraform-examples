@@ -1,0 +1,1 @@
+# This main.tf file is the starting point for all other elasticstack modules to be initialised
