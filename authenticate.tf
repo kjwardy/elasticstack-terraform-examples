@@ -4,13 +4,13 @@ provider "elasticstack" {
     # Elasticsearch - username / password authentication
     elasticsearch {
       username = "elastic"
-      password = "XvWUyU0gGYue+D7G14MG" 
+      password = "XvWUyU0gGYue+D7G14MG"
       endpoints = ["http://127.0.0.1:9200"]
     }
 
     # Elasticsearch - API key authentication
     # elasticsearch {
-    #   api_key = ""
+    #   api_key = "<example_api_key>"
     #   endpoints = ["http://127.0.0.1:9200"]
     # }
 
