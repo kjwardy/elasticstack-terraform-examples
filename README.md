@@ -1,8 +1,21 @@
 # elasticstack-terraform-examples
 
-This repo contains a live example of an Elastic Stack managed by the [`terraform-provider-elasticstack`](https://github.com/elastic/terraform-provider-elasticstack). As the provider is regularly updated, this repo aims to build out functionality so that a fully working Stack could be in place after a single `terraform apply`.
+This repo contains a live example of an Elastic Stack managed by the [`terraform-provider-elasticstack`](https://github.com/elastic/terraform-provider-elasticstack). As the provider is regularly updated, this repo aims to build out functionality so that a fully configured Stack could be in place after a single `terraform apply`.
 
 ![Static Badge](https://img.shields.io/badge/Status-In_Development-orange)
+
+There is no specific production use case that this repo aims to fulfil, however many of the examples will be suitable for such use cases.
+
+## Tips and advice
+
+### Folder structure
+
+How you structure your provider configuration is up to you and can grow and evolve as you add more managed resources. Some use cases demand that all individual aspects of a data stream or source are bundled together while others prefer to keep similar resources together. 
+
+At least initially, splitting your configuration up into the Elastic Stack's individual components is a clean place to start:
+- [`Elasticsearch`](./elasticsearch/)
+- [`Logstash`](./logstash/)
+- [`Kibana`](./logstash/)
 
 ## Using this repo
 
