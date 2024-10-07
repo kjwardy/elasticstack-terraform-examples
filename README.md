@@ -43,14 +43,14 @@ docker run --name kib01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kiba
 
 ### 2) Configure the repo to manage your stack
 
-With an Elastic Stack now initialised, you can choose your preferred method of authorising Terraform to be able to manage elements of the Stack. Elasticsearch and Kibana both need their own authorisation blocks for Terraform to be able to access them.
+With an Elastic Stack now initialised, you can choose your preferred method of authenticating Terraform to be able to manage elements of the Stack. Elasticsearch and Kibana both need their own authentication blocks for Terraform to be able to manage them.
 - Elasticsearch can use `username` and `password` **or** an `api_key`
 - Kibana can only use `username` and `password`
 
-The [`authorise.tf`](./authorise.tf) file contains examples of both being used. Which you choose is up to you! 
+The [`authenticate.tf`](./authenticate.tf) file contains examples of both being used.
 
-- You can create a base64 encoded API key in the API Keys section of Kibana Stack Management. Simply copy the key over the placeholder and ensure that it's the only resource uncommented.
-- If you span up a Stack earlier, the same `elastic` `username` and `password` will suffice for being able to manage the Stack for testing purposes. If you already have a Stack, consider creating a user within Kibana *solely* for Terraform management.
+- You can create a base64 encoded API key in the API Keys section of Kibana Stack Management. Copy the key over the placeholder and ensure that it's the only resource uncommented.
+- If you span up a Stack earlier, the same `elastic` `username` and `password` will suffice for being able to manage the Stack for testing purposes. If you already have a Stack, consider creating a user within Kibana *solely* for Terraform management, or use the `api_key` authentication method.
 
 ### 3) Initialise Terraform, plan and apply
 

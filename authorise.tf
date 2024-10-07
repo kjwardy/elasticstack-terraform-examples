@@ -1,1 +1,0 @@
-# This authorise.tf contains configuration examples for authorising Terraform to manage your Elastic Stack
