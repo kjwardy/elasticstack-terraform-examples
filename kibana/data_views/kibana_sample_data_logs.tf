@@ -1,8 +1,8 @@
-resource "elasticstack_kibana_data_view" "user_logs" {
+resource "elasticstack_kibana_data_view" "kibana_sample_data_logs" {
     data_view = {
-        id = "user-logs" # Choose a specific id for this data view
-        name = "user-logs" # The name of the data view when displayed in Kibana
-        title = "logs-user-infrastructure" # Specify which indices / datastreams will be matched by this data view
+        id = "sample-data-logs" # Choose a specific id for this data view
+        name = "Sample Data Logs" # The name of the data view when displayed in Kibana
+        title = "kibana_sample_data_logs" # Specify which indices / datastreams will be matched by this data view
         time_field_name = "@timestamp" # Choose which time field value will be used(usually @timestamp)
         namespaces = ["*"] # Which Kibana spaces this data view will be shown in
         
@@ -10,11 +10,10 @@ resource "elasticstack_kibana_data_view" "user_logs" {
         allow_no_index = true # Allows data view to be created even if some index matches don't exist
 
         field_formats = {
-          "user.id" = {
+          "url" = {
             id = "url"
             params = {
-                urltemplate = "http://google.com/search/{{value}}"
-                labeltemplate = "{{value}}"
+                label_template = "{{value}}"
             }
           }
         }
